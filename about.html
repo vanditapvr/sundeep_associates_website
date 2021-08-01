@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+
+    <!-- Links -->
+  <!-- bootstrap links -->
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns" crossorigin="anonymous"></script>
+
+  <!-- Font Awesome links -->
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <script src="https://kit.fontawesome.com/6c2bd266c9.js" crossorigin="anonymous"></script>
+
+
+    <style>
+
+              * {
+            box-sizing: border-box;
+          }
+
+          .heading{
+          color:whitesmoke;
+          position: absolute;
+          left: 50%;
+          transform: translatex(-50%);
+          }
+              /* Navigation Bar */
+
+            .logo_home {
+              margin: 0;
+              padding:0;
+              width: 10rem;
+              height: 4.5rem;
+              background:white;
+            }
+
+          .navbar{
+            background:#DF2027;
+          }
+
+          .nav-link{
+            text-decoration:none;
+            color:white;
+          }
+
+          .nav-link:hover{
+            color:grey;
+          }
+
+          .active{
+            border-right:0.1rem solid white;
+          }
+
+    </style>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <!-- Navigation Bar -->
+
+
+<nav class="navbar sticky-top navbar-expand-md">
+  <a class="navbar-brand" href="index.html"><img class="logo_home" src="SALogo.png" alt=""></a>
+  <h1 class="heading mx-auto">Apparel</h1>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggler" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+
+
+
+  <div class="collapse  navbar-collapse" id="navbarToggler">
+    <ul class="navbar-nav ml-auto mt-2 mt-lg-0">
+
+      <li class="nav-item active">
+        <a class="nav-link py-0" href="events.html">About</a>
+      </li>
+
+
+      <li class="nav-item">
+        <a class="nav-link py-0" href="contact.html">Contact</a>
+      </li>
+    </ul>
+
+  </div>
+</nav>
+
+
+<script>
+  // // Slide Navbar Down End
+  $(document).ready(function() {
+    $("#myTab li:eq(0) a").tab('show'); // show 2nd tab on page load
+  });
+
+
+  $(function () {
+          $(window).scroll(function () {
+
+              if ($(this).scrollTop() < 1000) {
+                  $('.navbar-brand img').attr('src','SALogoRed.png');
+              }
+          })
+      });
+
+//       $(function() {
+//
+// $(window).scroll(function() {
+//   var x = $(window).scrollTop();
+//
+//   if (x > 100) {
+//     $(".navbar-brand img").show();
+//   } else {
+//     $(".navbar-brand img").hide();
+//   }
+//
+// });
+//
+// });
+
+</script>
+
+  </body>
+</html>
