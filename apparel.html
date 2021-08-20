@@ -1,7 +1,11 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
-  <head>
-    <!-- Links -->
+
+<head>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Links -->
+
   <!-- bootstrap links -->
 
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
@@ -13,438 +17,833 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <script src="https://kit.fontawesome.com/6c2bd266c9.js" crossorigin="anonymous"></script>
 
-  <style>
+  <!-- Font Links -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:wght@500&display=swap" rel="stylesheet">
 
-        * {
+  <link href="https://fonts.googleapis.com/css2?family=Italianno&display=swap" rel="stylesheet">
+
+  <link href="https://fonts.googleapis.com/css2?family=Prompt&display=swap" rel="stylesheet">
+
+  <link href="https://fonts.googleapis.com/css2?family=Alegreya&display=swap" rel="stylesheet">
+
+
+  <style>
+    * {
       box-sizing: border-box;
     }
 
-    .heading{
-    color:whitesmoke;
-    position: absolute;
-    left: 50%;
-    transform: translatex(-50%);
+    body {
+      background-color: lightyellow;
+      overflow-x: hidden;
     }
-        /* Navigation Bar */
+
+    /* Navigation Bar */
+
+    .logo_home {
+      margin: 0;
+      padding: 0;
+      width: 70%;
+      height: 70%;
+    }
+
+    .navbar {
+      background: #019599 !important;
+      height: 7rem;
+      font-family: 'Crimson Pro', serif;
+      font-size: 1.1rem;
+    }
+
+    .nav-link {
+      text-decoration: none;
+      color: maroon !important;
+    }
+
+    .nav-link:hover {
+      color: #fdfd96 !important;
+    }
+
+    .active {
+      border-right: 0.1rem solid maroon;
+    }
+
+    .navbar-collapse {
+      text-align: right;
+    }
+
+
+
+    @media (max-width:768px) {
+      .navbar {
+        height: auto;
+      }
 
       .logo_home {
         margin: 0;
-        padding:0;
-        width: 10rem;
-        height: 4.5rem;
-        background:white;
+        padding: 0;
+        width: 60%;
+        height: 60%;
       }
 
-    .navbar{
-      background:#DF2027;
+      .active {
+        border-right: none;
+      }
+
+      .nav-link {
+        font-size: 1.3rem;
+        margin: 1rem;
+      }
+
     }
 
-    .nav-link{
-      text-decoration:none;
-      color:white;
+    .category-menu {
+      text-align: center;
+      background-color: #ffa62b;
+      padding: 1.5rem;
     }
 
-    .nav-link:hover{
-      color:grey;
+
+    #menu li {
+      display: inline;
+      padding: 1.5rem;
+      font-size: 1.1rem;
+      color: maroon;
+      font-family: 'Crimson Pro', serif;
     }
 
-    .active{
-      border-right:0.1rem solid white;
+    #menu li:hover {
+      cursor: pointer;
+      color: #fdfd96;
     }
 
-    #wrapper {
-    padding-left: 0;
-    -webkit-transition: all 0.5s ease;
-    -moz-transition: all 0.5s ease;
-    -o-transition: all 0.5s ease;
-    transition: all 0.5s ease;
-}
-
-#wrapper.toggled {
-    padding-left: 250px;
-}
-
-#sidebar-wrapper {
-    z-index: 1000;
-    position: fixed;
-    left: 250px;
-    width: 0;
-    height: 100%;
-    margin-left: -250px;
-    overflow-y: auto;
-    background:#fff;
-    -webkit-transition: all 0.5s ease;
-    -moz-transition: all 0.5s ease;
-    -o-transition: all 0.5s ease;
-    transition: all 0.5s ease;
-}
-
-#sidebar-wrapper {
-    box-shadow: inset -1px 0px 0px 0px #DDDDDD;
-}
-
-#wrapper.toggled #sidebar-wrapper {
-    width: 250px;
-}
-
-#page-content-wrapper {
-    width: 100%;
-    position: absolute;
-    padding: 15px;
-}
-
-#wrapper.toggled #page-content-wrapper {
-    position: absolute;
-    margin-right: -250px;
-}
-
-/* Sidebar Styles */
-
-.sidebar-nav {
-    position: absolute;
-    top: 0;
-    width: 250px;
-    margin: 0;
-    padding: 0;
-    list-style: none;
-}
-
-.sidebar-nav li {
-    text-indent: 20px;
-    line-height: 40px;
-}
-
-.sidebar-nav li a {
-    display: block;
-    text-decoration: none;
-    color: #999999;
-}
-
-.sidebar-nav li a:hover {
-    text-decoration: none;
-}
-
-.sidebar-nav li a:active,
-.sidebar-nav li a:focus {
-    text-decoration: none;
-}
-
-.sidebar-nav > .sidebar-brand {
-    height: 65px;
-    font-size: 18px;
-    line-height: 60px;
-}
-
-.sidebar-nav > .sidebar-brand a {
-    color: #999999;
-}
-
-.sidebar-nav > .sidebar-brand a:hover {
-    color: #fff;
-    background: none;
-}
-
-@media(min-width:768px) {
-    #wrapper {
-        padding-left: 250px;
+    #menu a {
+      text-decoration: none;
+      color: inherit;
     }
 
-    #wrapper.toggled {
-        padding-left: 0;
+    .col-md-4{
+      display: none;
     }
 
-    #sidebar-wrapper {
-        width: 250px;
+    /* The "show" class is added to the filtered elements */
+.show {
+  display: block;
+}
+
+#myBtnContainer{
+  position: relative;
+  text-align: center;
+}
+/* Style the buttons */
+.btn {
+  border: none;
+  outline: none;
+  padding: 12px 16px;
+  background-color: white;
+  cursor: pointer;
+  margin:1.5rem 0.5rem 2rem 0.5rem;
+}
+
+.btn:hover {
+  background-color: #ddd;
+}
+
+.btn.active {
+font-style: italic;
+}
+
+    .fixed-img{
+      position: absolute;
+      left:0;
+      width:52vh;
+      height:80vh
+      display:grid;
+      place-items:center;
+      margin:2rem 2rem 2rem 2rem;
     }
 
-    #wrapper.toggled #sidebar-wrapper {
-        width: 0;
+    .fixed-img img{
+      height:100vh;
+      width:inherit;
+      margin-bottom: 4rem;
     }
 
-    #page-content-wrapper {
-        padding: 20px;
-        position: relative;
+    .heading{
+      position: absolute;
+      left:43%;
+      color:maroon;
+      font-family: 'Alegreya', serif;
     }
 
-    #wrapper.toggled #page-content-wrapper {
-        position: relative;
-        margin-right: 0;
+
+
+    #product-grid{
+      margin-top: 2rem;
+      width:88%;
+      margin-left: 13vh;
     }
-}
 
-#sidebar-wrapper li.active > a:after {
-    border-right: 17px solid #f4f3ef;
-    border-top: 17px solid transparent;
-    border-bottom: 17px solid transparent;
-    content: "";
-    display: inline-block;
-    position: absolute;
-    right: -1px;
-}
+    .product{
+      background:#f0e68c;
+      display:grid;
+      place-items:center;
+      text-align: center;
+      padding:1rem;
+      margin-bottom: 3rem;
+    }
 
-.sidebar-brand {
-    border-bottom: 1px solid rgba(102, 97, 91, 0.3);
-}
+    .product-img{
+      width:80%;
+      height:18rem;
+      background-color: transparent;
+    }
 
-.sidebar-brand {
-    padding: 18px 0px;
-    margin: 0 20px;
-}
+    .product-body{
+      display:grid;
+      place-items:center;
+      text-align: center;
+    }
 
-.navbar .navbar-nav > li > a p {
-    display: inline-block;
-    margin: 0;
-}
-p {
-    font-size: 16px;
-    line-height: 1.4em;
-}
-
-.navbar-default {
-    background-color: #f4f3ef;
-    border:0px;
-    border-bottom: 1px solid #DDDDDD;
-}
-
-.btn-menu {
-    border-radius: 0px;
-    padding: 4px 12px;
-    margin: 14px 5px 5px 20px;
-    font-size: 14px;
-    float: left;
-    color:red;
-    background:white;
-    border:none;
-}
-.btn-menu:hover{
-  color:red;
-  background:white;
-  border:none;
-}
-
-.product{
-  text-align:center;
-  margin-bottom:3rem;
-}
+    .product-name{
+      color:maroon;
+    }
 
 
+    #footer {
+      padding: 1%;
+      background: #019599 !important;
+      display: grid;
+      place-items: center;
+      color: maroon;
+    }
   </style>
+  <meta charset="utf-8">
+  <title></title>
+</head>
 
-    <meta charset="utf-8">
-    <title></title>
-  </head>
-  <body>
+<body>
 
-    <!-- Navigation Bar -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 
+  <!-- Navigation Bar -->
 
-<nav class="navbar sticky-top navbar-expand-md">
-  <a class="navbar-brand" href="index.html"><img class="logo_home" src="S.png" alt=""></a>
-  <h1 class="heading mx-auto">Apparel</h1>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggler" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="index.html"><img class="logo_home" src="Paint3.png" alt=""></a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
 
-
-
-
-  <div class="collapse  navbar-collapse" id="navbarToggler">
-    <ul class="navbar-nav ml-auto mt-2 mt-lg-0">
-
-      <li class="nav-item active">
-        <a class="nav-link py-0" href="about.html">About</a>
-      </li>
+    <div class="heading">
+      <h1 style="text-align:center;">Apparel</h1>
+    </div>
 
 
-      <li class="nav-item">
-        <a class="nav-link py-0" href="contact.html">Contact</a>
-      </li>
-    </ul>
 
+
+    <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+      <ul class="navbar-nav ml-auto mt-2 mt-lg-0">
+        <li class="nav-item active">
+          <a class="nav-link py-0" href="about.html">About</a>
+        </li>
+
+
+        <li class="nav-item">
+          <a class="nav-link py-0" href="contact.html">Contact</a>
+        </li>
+      </ul>
+    </div>
+
+
+  </nav>
+  <div class="container-fluid category-menu" id="menu">
+    <li><a href="apparel.html">Apparel</a></li>
+    <li><a href="customised.html">Customised Gifts</a></li>
+    <li><a href="mugs.html">Mugs</a></li>
+    <li><a href="stationary.html">Stationary</a></li>
+    <li><a href="technical.html">Technical Gifts</a></li>
+    <li><a href="diffusers.html">Diffusers & Oils</a></li>
+    <li><a href="occasion.html">Gifts by Occasion</a></li>
+    <li><a href="miscellaneous.html">Miscellaneous</a></li>
   </div>
-</nav>
 
-<div id="wrapper" class="wrapper-content">
-    <div id="sidebar-wrapper">
-        <ul class="sidebar-nav">
-            <li class="sidebar-brand">
-                <a href="#">
-                    All
-                </a>
-            </li>
-            <li>
-                <a href="#">Polos</a>
-            </li>
-            <li>
-                <a href="#">T- Shirts</a>
-            </li>
-            <li>
-                <a href="#">Shirts</a>
-            </li>
-            <li>
-                <a href="#">Windcheaters</a>
-            </li>
-            <li class="active">
-                <a href="#">Sweatshirts</a>
-            </li>
-            <li>
-                <a href="#">Caps</a>
-            </li>
-        </ul>
-    </div>
-
-    <div id="page-content-wrapper">
-        <nav class="navbar navbar-default">
-            <div class="container-fluid">
-                <div class="navbar-header">
-                    <button class="btn-menu btn btn-success btn-toggle-menu" type="button">
-                        <i class="fa fa-bars"></i>
-                    </button>
-                </div>
-                <div class="collapse navbar-collapse">
-                    <ul class="nav navbar-nav navbar-right">
-                        <li>
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                                <i class="ti-panel"></i>
-        						<p>Stats</p>
-                            </a>
-                        </li>
-        				<li>
-                            <a href="#">
-        						<i class="ti-settings"></i>
-        						<p>Settings</p>
-                            </a>
-                        </li>
-                    </ul>
-
-                </div>
-            </div>
-        </nav>
-    </div>
+  <div id="myBtnContainer">
+  <button class="btn active" onclick="filterSelection('all')"> Show all</button>
+  <button class="btn" onclick="filterSelection('polo')"> Polos</button>
+  <button class="btn" onclick="filterSelection('casual')"> T- Shirts</button>
+  <button class="btn" onclick="filterSelection('shirt')"> Shirts</button>
+  <button class="btn" onclick="filterSelection('windcheater')"> Windcheaters</button>
+  <button class="btn" onclick="filterSelection('sweat')"> Sweatshirts</button>
+  <button class="btn" onclick="filterSelection('cap')"> Caps</button>
+  <button class="btn" onclick="filterSelection('others')"> Others</button>
 </div>
 
-<div class="container">
-  <div class="row">
-    <div class="col-md-4">
-      <div class="card product">
-        <div class="card-body product-img">
-          <img src="Polo.jpg" />
-        </div>
-        <div class="card-footer product-name">
-          <h6>Silver Ballpoint Pen</h6>
-        </div>
-      </div>
-      </div>
 
-      <div class="col-md-4">
+  <!-- <div id="filter-holder">
+    <label for="filter">Filter:</label>
+    <select name="filter" id="filter">
+      <option value="all"><button class="btn active" onkeyup="filterSelection('all')"> Show all</button></option>
+      <option value="polo"><button class="btn" onkeyup="filterSelection('polo')"> Polos</button></option>
+      <option value="tshirt">T- Shirts</option>
+      <option value="shirt">Shirts</option>
+      <option value="windcheater">Windcheaters</option>
+      <option value="sweatshirt">Sweatshirts</option>
+      <option value="cap">Caps</option>
+      <option value="others">Others</option>
+    </select>
+  </div> -->
+
+  <!-- <div class="fixed-img">
+    <img src="Man.jpeg" />
+  </div> -->
+
+
+
+  <div id="product-grid">
+    <div class="row">
+
+      <div class="col-md-4 polo polo">
         <div class="card product">
-          <div class="card-body product-img">
-            <img src="T-shirt.jpg" />
-          </div>
-          <div class="card-footer product-name">
-            <h6>Silver Ballpoint Pen</h6>
+          <img class="card-img-top product-img" src="polo1.jpg" alt="Card image cap">
+          <div class="card-body product-body">
+            <h5 class="card-title product-name">Card title</h5>
           </div>
         </div>
+      </div>
+
+      <div class="col-md-4 polo">
+        <div class="card product">
+          <img class="card-img-top product-img" src="polo2.jpg" alt="Card image cap">
+          <div class="card-body product-body">
+            <h5 class="card-title product-name">Card title</h5>
+          </div>
         </div>
+      </div>
 
-        <div class="col-md-4">
-          <div class="card product">
-            <div class="card-body product-img">
-              <img src="Shirt.jpg" />
-            </div>
-            <div class="card-footer product-name">
-              <h6>Silver Ballpoint Pen</h6>
-            </div>
+      <div class="col-md-4 polo">
+        <div class="card product">
+          <img class="card-img-top product-img" src="polo3.jpg" alt="Card image cap">
+          <div class="card-body product-body">
+            <h5 class="card-title product-name">Card title</h5>
           </div>
+        </div>
+      </div>
+
+      <div class="col-md-4 polo">
+        <div class="card product">
+          <img class="card-img-top product-img" src="polo4.jpg" alt="Card image cap">
+          <div class="card-body product-body">
+            <h5 class="card-title product-name">Card title</h5>
           </div>
+        </div>
+      </div>
 
-          <div class="col-md-4">
-            <div class="card product">
-              <div class="card-body product-img">
-                <img src="Windcheater.jpg" />
-              </div>
-              <div class="card-footer product-name">
-                <h6>Silver Ballpoint Pen</h6>
-              </div>
-            </div>
-            </div>
+      <div class="col-md-4 polo">
+        <div class="card product">
+          <img class="card-img-top product-img" src="polo5.jpg" alt="Card image cap">
+          <div class="card-body product-body">
+            <h5 class="card-title product-name">Card title</h5>
+          </div>
+        </div>
+      </div>
 
-            <div class="col-md-4">
-              <div class="card product">
-                <div class="card-body product-img">
-                  <img src="Sweatshirt.jpg" />
-                </div>
-                <div class="card-footer product-name">
-                  <h6>Silver Ballpoint Pen</h6>
-                </div>
-              </div>
-              </div>
+      <div class="col-md-4 polo">
+        <div class="card product">
+          <img class="card-img-top product-img" src="polo6.jpg" alt="Card image cap">
+          <div class="card-body product-body">
+            <h5 class="card-title product-name">Card title</h5>
+          </div>
+        </div>
+      </div>
 
-              <div class="col-md-4">
-                <div class="card product">
-                  <div class="card-body product-img">
-                    <img src="Cap.jpg" />
-                  </div>
-                  <div class="card-footer product-name">
-                    <h6>Silver Ballpoint Pen</h6>
-                  </div>
-                </div>
-                </div>
+      <div class="col-md-4 polo">
+        <div class="card product">
+          <img class="card-img-top product-img" src="polo7.jpg" alt="Card image cap">
+          <div class="card-body product-body">
+            <h5 class="card-title product-name">Card title</h5>
+          </div>
+        </div>
+      </div>
 
-                <div class="col-md-4">
-                  <div class="card product">
-                    <div class="card-body product-img">
-                      <img src="Blazer.jpg" />
-                    </div>
-                    <div class="card-footer product-name">
-                      <h6>Silver Ballpoint Pen</h6>
-                    </div>
-                  </div>
-                  </div>
+      <div class="col-md-4 polo">
+        <div class="card product">
+          <img class="card-img-top product-img" src="polo8.jpg" alt="Card image cap">
+          <div class="card-body product-body">
+            <h5 class="card-title product-name">Card title</h5>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-4 polo">
+        <div class="card product">
+          <img class="card-img-top product-img" src="polo9.jpg" alt="Card image cap">
+          <div class="card-body product-body">
+            <h5 class="card-title product-name">Card title</h5>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-4 polo">
+        <div class="card product">
+          <img class="card-img-top product-img" src="polo10.jpg" alt="Card image cap">
+          <div class="card-body product-body">
+            <h5 class="card-title product-name">Card title</h5>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-4 polo">
+        <div class="card product">
+          <img class="card-img-top product-img" src="polo11.jpg" alt="Card image cap">
+          <div class="card-body product-body">
+            <h5 class="card-title product-name">Card title</h5>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-4 polo">
+        <div class="card product">
+          <img class="card-img-top product-img" src="polo12.jpg" alt="Card image cap">
+          <div class="card-body product-body">
+            <h5 class="card-title product-name">Card title</h5>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-4 polo">
+        <div class="card product">
+          <img class="card-img-top product-img" src="polo13.jpg" alt="Card image cap">
+          <div class="card-body product-body">
+            <h5 class="card-title product-name">Card title</h5>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-4 polo">
+        <div class="card product">
+          <img class="card-img-top product-img" src="polo14.jpg" alt="Card image cap">
+          <div class="card-body product-body">
+            <h5 class="card-title product-name">Card title</h5>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-4 casual">
+        <div class="card product">
+          <img class="card-img-top product-img" src="tshirt1.jpg" alt="Card image cap">
+          <div class="card-body product-body">
+            <h5 class="card-title product-name">Card title</h5>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-4 casual">
+        <div class="card product">
+          <img class="card-img-top product-img" src="tshirt2.jpg" alt="Card image cap">
+          <div class="card-body product-body">
+            <h5 class="card-title product-name">Card title</h5>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-4 casual">
+        <div class="card product">
+          <img class="card-img-top product-img" src="tshirt3.jpg" alt="Card image cap">
+          <div class="card-body product-body">
+            <h5 class="card-title product-name">Card title</h5>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-4 casual">
+        <div class="card product">
+          <img class="card-img-top product-img" src="tshirt4.jpg" alt="Card image cap">
+          <div class="card-body product-body">
+            <h5 class="card-title product-name">Card title</h5>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-4 casual">
+        <div class="card product">
+          <img class="card-img-top product-img" src="tshirt5.jpg" alt="Card image cap">
+          <div class="card-body product-body">
+            <h5 class="card-title product-name">Card title</h5>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-4 shirt">
+        <div class="card product">
+          <img class="card-img-top product-img" src="shirt1.jpg" alt="Card image cap">
+          <div class="card-body product-body">
+            <h5 class="card-title product-name">Card title</h5>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-4 shirt">
+        <div class="card product">
+          <img class="card-img-top product-img" src="shirt2.jpg" alt="Card image cap">
+          <div class="card-body product-body">
+            <h5 class="card-title product-name">Card title</h5>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-4 shirt">
+        <div class="card product">
+          <img class="card-img-top product-img" src="shirt3.jpg" alt="Card image cap">
+          <div class="card-body product-body">
+            <h5 class="card-title product-name">Card title</h5>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-4 shirt">
+        <div class="card product">
+          <img class="card-img-top product-img" src="shirt4.jpg" alt="Card image cap">
+          <div class="card-body product-body">
+            <h5 class="card-title product-name">Card title</h5>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-4 shirt">
+        <div class="card product">
+          <img class="card-img-top product-img" src="shirt5.jpg" alt="Card image cap">
+          <div class="card-body product-body">
+            <h5 class="card-title product-name">Card title</h5>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-4 shirt">
+        <div class="card product">
+          <img class="card-img-top product-img" src="shirt6.jpg" alt="Card image cap">
+          <div class="card-body product-body">
+            <h5 class="card-title product-name">Card title</h5>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-4 shirt">
+        <div class="card product">
+          <img class="card-img-top product-img" src="shirt7.jpg" alt="Card image cap">
+          <div class="card-body product-body">
+            <h5 class="card-title product-name">Card title</h5>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-4 shirt">
+        <div class="card product">
+          <img class="card-img-top product-img" src="shirt8.jpg" alt="Card image cap">
+          <div class="card-body product-body">
+            <h5 class="card-title product-name">Card title</h5>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-4 shirt">
+        <div class="card product">
+          <img class="card-img-top product-img" src="shirt9.jpg" alt="Card image cap">
+          <div class="card-body product-body">
+            <h5 class="card-title product-name">Card title</h5>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-4 shirt">
+        <div class="card product">
+          <img class="card-img-top product-img" src="shirt10.jpg" alt="Card image cap">
+          <div class="card-body product-body">
+            <h5 class="card-title product-name">Card title</h5>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-4 shirt">
+        <div class="card product">
+          <img class="card-img-top product-img" src="shirt11.jpg" alt="Card image cap">
+          <div class="card-body product-body">
+            <h5 class="card-title product-name">Card title</h5>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-4 shirt">
+        <div class="card product">
+          <img class="card-img-top product-img" src="shirt12.jpg" alt="Card image cap">
+          <div class="card-body product-body">
+            <h5 class="card-title product-name">Card title</h5>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-4 shirt">
+        <div class="card product">
+          <img class="card-img-top product-img" src="shirt13.jpg" alt="Card image cap">
+          <div class="card-body product-body">
+            <h5 class="card-title product-name">Card title</h5>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-4 shirt">
+        <div class="card product">
+          <img class="card-img-top product-img" src="shirt14.jpg" alt="Card image cap">
+          <div class="card-body product-body">
+            <h5 class="card-title product-name">Card title</h5>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-4 shirt">
+        <div class="card product">
+          <img class="card-img-top product-img" src="shirt15.jpg" alt="Card image cap">
+          <div class="card-body product-body">
+            <h5 class="card-title product-name">Card title</h5>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-4 windcheater">
+        <div class="card product">
+          <img class="card-img-top product-img" src="wind1.jpg" alt="Card image cap">
+          <div class="card-body product-body">
+            <h5 class="card-title product-name">Card title</h5>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-4 windcheater">
+        <div class="card product">
+          <img class="card-img-top product-img" src="wind2.jpg" alt="Card image cap">
+          <div class="card-body product-body">
+            <h5 class="card-title product-name">Card title</h5>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-4 windcheater">
+        <div class="card product">
+          <img class="card-img-top product-img" src="wind3.jpg" alt="Card image cap">
+          <div class="card-body product-body">
+            <h5 class="card-title product-name">Card title</h5>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-4 windcheater">
+        <div class="card product">
+          <img class="card-img-top product-img" src="wind4.jpg" alt="Card image cap">
+          <div class="card-body product-body">
+            <h5 class="card-title product-name">Card title</h5>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-4 windcheater">
+        <div class="card product">
+          <img class="card-img-top product-img" src="wind5.jpg" alt="Card image cap">
+          <div class="card-body product-body">
+            <h5 class="card-title product-name">Card title</h5>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-4 sweat">
+        <div class="card product">
+          <img class="card-img-top product-img" src="sweatshirt1.jpg" alt="Card image cap">
+          <div class="card-body product-body">
+            <h5 class="card-title product-name">Card title</h5>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-4 sweat">
+        <div class="card product">
+          <img class="card-img-top product-img" src="sweatshirt2.jpg" alt="Card image cap">
+          <div class="card-body product-body">
+            <h5 class="card-title product-name">Card title</h5>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-4 sweat">
+        <div class="card product">
+          <img class="card-img-top product-img" src="sweatshirt3.jpg" alt="Card image cap">
+          <div class="card-body product-body">
+            <h5 class="card-title product-name">Card title</h5>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-4 cap">
+        <div class="card product">
+          <img class="card-img-top product-img" src="cap1.jpg" alt="Card image cap">
+          <div class="card-body product-body">
+            <h5 class="card-title product-name">Card title</h5>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-4 cap">
+        <div class="card product">
+          <img class="card-img-top product-img" src="cap2.jpg" alt="Card image cap">
+          <div class="card-body product-body">
+            <h5 class="card-title product-name">Card title</h5>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-4 cap">
+        <div class="card product">
+          <img class="card-img-top product-img" src="cap3.jpg" alt="Card image cap">
+          <div class="card-body product-body">
+            <h5 class="card-title product-name">Card title</h5>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-4 cap">
+        <div class="card product">
+          <img class="card-img-top product-img" src="cap4.jpg" alt="Card image cap">
+          <div class="card-body product-body">
+            <h5 class="card-title product-name">Card title</h5>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-4 cap">
+        <div class="card product">
+          <img class="card-img-top product-img" src="cap5.jpg" alt="Card image cap">
+          <div class="card-body product-body">
+            <h5 class="card-title product-name">Card title</h5>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-4 cap">
+        <div class="card product">
+          <img class="card-img-top product-img" src="cap6.jpg" alt="Card image cap">
+          <div class="card-body product-body">
+            <h5 class="card-title product-name">Card title</h5>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-4 cap">
+        <div class="card product">
+          <img class="card-img-top product-img" src="cap7.jpg" alt="Card image cap">
+          <div class="card-body product-body">
+            <h5 class="card-title product-name">Card title</h5>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-4 cap">
+        <div class="card product">
+          <img class="card-img-top product-img" src="cap8.jpg" alt="Card image cap">
+          <div class="card-body product-body">
+            <h5 class="card-title product-name">Card title</h5>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-4 cap">
+        <div class="card product">
+          <img class="card-img-top product-img" src="cap9.jpg" alt="Card image cap">
+          <div class="card-body product-body">
+            <h5 class="card-title product-name">Card title</h5>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-4 cap">
+        <div class="card product">
+          <img class="card-img-top product-img" src="cap10.jpg" alt="Card image cap">
+          <div class="card-body product-body">
+            <h5 class="card-title product-name">Card title</h5>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-4 others">
+        <div class="card product">
+          <img class="card-img-top product-img" src="apron.jpg" alt="Card image cap">
+          <div class="card-body product-body">
+            <h5 class="card-title product-name">Card title</h5>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-4 others">
+        <div class="card product">
+          <img class="card-img-top product-img" src="blazer.jpg" alt="Card image cap">
+          <div class="card-body product-body">
+            <h5 class="card-title product-name">Card title</h5>
+          </div>
+        </div>
+      </div>
+
+
     </div>
   </div>
 
-<script>
 
 
-  // // Slide Navbar Down End
-  $(document).ready(function() {
-    $("#myTab li:eq(0) a").tab('show'); // show 2nd tab on page load
-  });
+
+  <script>
+
+  filterSelection("all")
+  function filterSelection(c) {
+    var x, i;
+    x = document.getElementsByClassName("col-md-4");
+    if (c == "all") c = "";
+    for (i = 0; i < x.length; i++) {
+      w3RemoveClass(x[i], "show");
+      if (x[i].className.indexOf(c) > -1) w3AddClass(x[i], "show");
+    }
+  }
+
+  function w3AddClass(element, name) {
+    var i, arr1, arr2;
+    arr1 = element.className.split(" ");
+    arr2 = name.split(" ");
+    for (i = 0; i < arr2.length; i++) {
+      if (arr1.indexOf(arr2[i]) == -1) {element.className += " " + arr2[i];}
+    }
+  }
+
+  function w3RemoveClass(element, name) {
+    var i, arr1, arr2;
+    arr1 = element.className.split(" ");
+    arr2 = name.split(" ");
+    for (i = 0; i < arr2.length; i++) {
+      while (arr1.indexOf(arr2[i]) > -1) {
+        arr1.splice(arr1.indexOf(arr2[i]), 1);
+      }
+    }
+    element.className = arr1.join(" ");
+  }
 
 
-  $(function () {
-          $(window).scroll(function () {
-
-              if ($(this).scrollTop() < 1000) {
-                  $('.navbar-brand img').attr('src','S.png');
-              }
-          })
-      });
-
-//       $(function() {
-//
-// $(window).scroll(function() {
-//   var x = $(window).scrollTop();
-//
-//   if (x > 100) {
-//     $(".navbar-brand img").show();
-//   } else {
-//     $(".navbar-brand img").hide();
-//   }
-//
-// });
-//
-// });
-
-$(function(){
-    $(".btn-toggle-menu").click(function() {
-        $("#wrapper").toggleClass("toggled");
+  // Add active class to the current button (highlight it)
+  var btnContainer = document.getElementById("myBtnContainer");
+  var btns = btnContainer.getElementsByClassName("btn");
+  for (var i = 0; i < btns.length; i++) {
+    btns[i].addEventListener("click", function(){
+      var current = document.getElementsByClassName("active");
+      current[0].className = current[0].className.replace(" active", "");
+      this.className += " active";
     });
-})
-</script>
+  }
+
+  </script>
 
 
+</body>
 
-  </body>
 </html>

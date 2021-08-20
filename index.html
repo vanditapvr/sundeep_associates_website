@@ -3,6 +3,8 @@
 
 <head>
 
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
   <!-- Links -->
 
   <!-- bootstrap links -->
@@ -18,7 +20,13 @@
 
   <!-- Font Links -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:wght@500&display=swap" rel="stylesheet">
+
+<link href="https://fonts.googleapis.com/css2?family=Italianno&display=swap" rel="stylesheet">
+
+<link href="https://fonts.googleapis.com/css2?family=Prompt&display=swap" rel="stylesheet">
+
 
 
   <style>
@@ -27,7 +35,7 @@
     }
 
     body {
-      background-color: #fcffa4;
+      background-color:lightyellow;
     }
 
     /* Navigation Bar */
@@ -40,21 +48,23 @@
     }
 
     .navbar {
-      background: #004225 !important;
+      background: #019599 !important;
       height: 7rem;
+      font-family: 'Crimson Pro', serif;
+      font-size: 1.1rem;
     }
 
     .nav-link {
       text-decoration: none;
-      color: lightgreen !important;
+      color: maroon !important;
     }
 
     .nav-link:hover {
-      color: green !important;
+      color: #fdfd96 !important;
     }
 
     .active {
-      border-right: 0.1rem solid lightgreen;
+      border-right: 0.1rem solid maroon;
     }
 
     .navbar-collapse {
@@ -88,7 +98,7 @@
 
     .category-menu {
       text-align: center;
-      background-color: #006b3c;
+      background-color: #ffa62b;
       padding:1.5rem;
     }
 
@@ -96,11 +106,19 @@
     #menu li {
       display: inline;
       padding: 1.5rem;
-      color:#d0f0c0;
+      font-size: 1.1rem;
+      color:maroon;
+      font-family: 'Crimson Pro', serif;
     }
 
     #menu li:hover {
       cursor:pointer;
+      color:#fdfd96;
+    }
+
+    #menu a{
+      text-decoration: none;
+      color:inherit;
     }
 
     .intro-text{
@@ -109,7 +127,17 @@
     }
 
     .intro-text h1, h3{
-      color:green;
+      color:#8b0000;
+    }
+
+    .intro-text h1{
+      font-family: 'Italianno', cursive;
+      font-size: 5.5rem;
+    }
+
+    .intro-text h3{
+      font-family: 'Prompt', sans-serif;
+      font-size: 1.5rem;
     }
 
     .items-grid {
@@ -134,25 +162,40 @@
 
     .item {
       display: inline-block;
-      background: #fbec5d;
+     background:#997a8d;
       padding: 1rem;
-      margin: 0 0 1.5em;
+      margin: 0 0 2rem;
       width: 100%;
       -webkit-transition: 1s ease all;
       box-sizing: border-box;
       -moz-box-sizing: border-box;
       -webkit-box-sizing: border-box;
-      box-shadow: 0.1rem 0.1rem 0.5rem 0.1rem lightgrey;
+      /* box-shadow: 0.1rem 0.1rem 0.5rem 0.1rem lightgrey; */
       text-align: center;
     }
 
     .item img {
-      width: 70%;
+      width: 80%;
+      margin-top: 2rem;
+    }
+
+    .item img:hover{
+      -ms-transform: rotate(-5deg); /* IE 9 */
+      transform: rotate(-5deg); /* Standard syntax */
+    }
+
+    .item:hover{
+      cursor: pointer;
+      -ms-transform: scale(1.2,1.2); /* IE 9 */
+  transform: scale(1.2,1.2); /* Standard syntax */
+   background:#c4aead;
+   padding:2rem;
     }
 
     .category {
       font-size: 1.4rem;
       padding:1rem;
+      color:cornsilk;
     }
 
 
@@ -188,7 +231,7 @@
 
     #footer {
       padding: 1%;
-      background: #32cd32;
+    background: #019599 !important;
       display: grid;
       place-items: center;
       color: maroon;
@@ -230,14 +273,14 @@
     </div>
   </nav>
   <div class="container-fluid category-menu" id="menu">
-    <li>Apparel</li>
-    <li>Customised Gifts</li>
-    <li>Mugs</li>
-    <li>Stationary</li>
-    <li>Technical Gifts</li>
-    <li>Diffusers & Oils</li>
-    <li>Gifts by Occasion</li>
-    <li>Miscellaneous</li>
+    <li><a href="apparel.html">Apparel</a></li>
+    <li><a href="customised.html">Customised Gifts</a></li>
+    <li><a href="mugs.html">Mugs</a></li>
+    <li><a href="stationary.html">Stationary</a></li>
+    <li><a href="technical.html">Technical Gifts</a></li>
+    <li><a href="diffusers.html">Diffusers & Oils</a></li>
+    <li><a href="occasion.html">Gifts by Occasion</a></li>
+    <li><a href="miscellaneous.html">Miscellaneous</a></li>
   </div>
 
   <div class="container intro-text">
@@ -322,9 +365,6 @@
 
 
 
-  <section id="footer">
-    Copyright
-  </section>
 
 
 
