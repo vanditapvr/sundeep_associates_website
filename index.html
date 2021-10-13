@@ -23,6 +23,8 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:wght@500&display=swap" rel="stylesheet">
 
+<link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300&display=swap" rel="stylesheet">
+
 <link href="https://fonts.googleapis.com/css2?family=Italianno&display=swap" rel="stylesheet">
 
 <link href="https://fonts.googleapis.com/css2?family=Prompt&display=swap" rel="stylesheet">
@@ -35,7 +37,7 @@
     }
 
     body {
-      background-color:lightyellow;
+      background-color:white;
     }
 
     /* Navigation Bar */
@@ -43,12 +45,12 @@
     .logo_home {
       margin: 0;
       padding: 0;
-      width: 70%;
-      height: 70%;
+      width: 13rem;
+      height: 5rem;
     }
 
     .navbar {
-      background: #019599 !important;
+      background: #e31e25 !important;
       height: 7rem;
       font-family: 'Crimson Pro', serif;
       font-size: 1.1rem;
@@ -60,7 +62,7 @@
     }
 
     .nav-link:hover {
-      color: #fdfd96 !important;
+      color: darkgrey !important;
     }
 
     .active {
@@ -98,7 +100,7 @@
 
     .category-menu {
       text-align: center;
-      background-color: #ffa62b;
+      background-color: whitesmoke;
       padding:1.5rem;
     }
 
@@ -107,13 +109,13 @@
       display: inline;
       padding: 1.5rem;
       font-size: 1.1rem;
-      color:maroon;
+      color:#BD1616;
       font-family: 'Crimson Pro', serif;
     }
 
     #menu li:hover {
       cursor:pointer;
-      color:#fdfd96;
+      color:darkgrey;
     }
 
     #menu a{
@@ -126,18 +128,17 @@
       text-align: center;
     }
 
-    .intro-text h1, h3{
-      color:#8b0000;
-    }
 
     .intro-text h1{
       font-family: 'Italianno', cursive;
       font-size: 5.5rem;
+      color:#950101;
     }
 
     .intro-text h3{
-      font-family: 'Prompt', sans-serif;
+      font-family: 'Crimson Pro', serif;
       font-size: 1.5rem;
+      color:#BD1616;
     }
 
     .items-grid {
@@ -162,7 +163,7 @@
 
     .item {
       display: inline-block;
-     background:#997a8d;
+     background:white;
       padding: 1rem;
       margin: 0 0 2rem;
       width: 100%;
@@ -177,6 +178,7 @@
     .item img {
       width: 80%;
       margin-top: 2rem;
+      box-shadow: 0.5rem 0.6rem 0.5rem 0.5rem gainsboro;
     }
 
     .item img:hover{
@@ -188,14 +190,14 @@
       cursor: pointer;
       -ms-transform: scale(1.2,1.2); /* IE 9 */
   transform: scale(1.2,1.2); /* Standard syntax */
-   background:#c4aead;
+   background:#f2f3f4;
    padding:2rem;
     }
 
     .category {
       font-size: 1.4rem;
-      padding:1rem;
-      color:cornsilk;
+      padding:2rem;
+      color:#BD1616;
     }
 
 
@@ -225,16 +227,12 @@
 
 
 
-
-
-
-
     #footer {
-      padding: 1%;
-    background: #019599 !important;
+    background: #e31e25 !important;
       display: grid;
       place-items: center;
-      color: maroon;
+      color: white;
+      padding:2rem;
     }
 
     .product-img {
@@ -253,7 +251,7 @@
   <!-- Navigation Bar -->
 
   <nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <a class="navbar-brand" href="index.html"><img class="logo_home" src="Paint3.png" alt=""></a>
+    <a class="navbar-brand" href="index.html"><img class="logo_home" src="Logo2.png" alt=""></a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -362,6 +360,14 @@
     </div>
 
   </div>
+
+  <section id="footer">
+
+    <div class="footer-text">
+      Copyright &copy 2021 IITB Research Park Foundation | All rights reserved
+
+    </div>
+  </section>
 
 
 
