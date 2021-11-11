@@ -1,0 +1,1250 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Links -->
+
+  <!-- bootstrap links -->
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns" crossorigin="anonymous"></script>
+
+  <!-- Font Awesome links -->
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <script src="https://kit.fontawesome.com/6c2bd266c9.js" crossorigin="anonymous"></script>
+
+  <!-- Font Links -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:wght@500&display=swap" rel="stylesheet">
+
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300&display=swap" rel="stylesheet">
+
+  <link href="https://fonts.googleapis.com/css2?family=Italianno&display=swap" rel="stylesheet">
+
+  <link href="https://fonts.googleapis.com/css2?family=Prompt&display=swap" rel="stylesheet">
+
+  <link href="https://fonts.googleapis.com/css2?family=Zen+Antique+Soft&display=swap" rel="stylesheet">
+
+  <link href="https://fonts.googleapis.com/css2?family=Overlock:wght@700&display=swap" rel="stylesheet">
+
+  <link href="https://fonts.googleapis.com/css2?family=Cantata+One&display=swap" rel="stylesheet">
+
+
+
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      background-color: white;
+    }
+
+    /* Navigation Bar */
+
+    .logo_home {
+      margin: 0;
+      padding: 0;
+      width: 11rem;
+      height: 4rem;
+    }
+
+    .navbar {
+      background: white !important;
+      height: 6rem;
+      font-family: 'Crimson Pro', serif;
+      font-size: 1.1rem;
+      border-top: 0.1rem solid #e31e25;
+    }
+
+    .nav-link {
+      text-decoration: none;
+      color: #e31e25 !important;
+    }
+
+    .nav-link:hover {
+      color: grey !important;
+    }
+
+    .vertical-line {
+      border-right: 0.1rem solid #e31e25;
+    }
+
+    .navbar-collapse {
+      text-align: right;
+    }
+
+
+
+    @media (max-width:768px) {
+      .navbar {
+        height: auto;
+      }
+
+      .logo_home {
+        margin: 0;
+        padding: 0;
+        width: 60%;
+        height: 60%;
+      }
+
+      .active {
+        border-right: none;
+      }
+
+      .nav-link {
+        font-size: 1.3rem;
+        margin: 1rem;
+      }
+
+    }
+
+    .category-menu {
+      text-align: center;
+      background-color: #e31e25;
+      padding: 0.7rem;
+      /* border-bottom: 1.5rem solid gainsboro; */
+    }
+
+
+    #menu li {
+      display: inline;
+      padding: 1.5rem;
+      font-size: 1.1rem;
+      color: white;
+      font-family: 'Crimson Pro', serif;
+    }
+
+    #menu li:hover {
+      cursor: pointer;
+      color: darkgrey;
+    }
+
+    #menu a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .col-md-4 {
+      display: none;
+    }
+
+    /* The "show" class is added to the filtered elements */
+    .show {
+      display: block;
+    }
+
+    #myBtnContainer {
+      position: relative;
+      text-align: center;
+    }
+
+    /* Style the buttons */
+    .btn {
+      border: 0.1rem solid gainsboro;
+      cursor: pointer;
+      margin: 1.5rem 0.5rem 2rem 0.5rem;
+      font-size: 0.95rem;
+      color: maroon;
+      font-family: 'Zen Antique Soft', serif;
+      box-shadow: 0.1rem 0.1rem 0.1rem 0.1rem gainsboro;
+    }
+
+    .btn:hover {
+      background-color: lightgrey;
+    }
+
+    .btn.active {
+      border: 0.1rem solid gainsboro;
+      color:#e31e25;
+    }
+
+    .show {
+      display: block;
+    }
+
+    h1{
+      text-align: center;
+      margin-top: 1.5rem;
+      margin-bottom: 1.5rem;
+      font-family: 'Cantata One', serif;
+      color:#848482;
+    }
+
+
+    #product-grid {
+      margin-top: 2rem;
+      width: 88%;
+      margin-left: 13vh;
+      margin-bottom: 3rem;
+    }
+
+    .product {
+      display: grid;
+      place-items: center;
+      text-align: center;
+      margin-bottom: 3rem;
+      border: 0.1rem solid gainsboro;
+      height: 20rem;
+      background: #FAF3F3;
+      box-shadow:0.2rem 0.2rem 0.2rem 0.2rem gainsboro;
+    }
+
+    .product:hover{
+      cursor:pointer;
+      box-shadow:0.5rem 0.5rem 0.5rem 0.5rem darkgrey;
+      background: gainsboro;
+    }
+
+    .product-img {
+      width: auto;
+      height: 12rem;
+      margin-top: 1rem;
+      box-shadow: 0.2rem 0.2rem 0.2rem 0.2rem #DECDC3;
+    }
+
+    .product-body {
+      display: grid;
+      place-items: center;
+      text-align: center;
+    }
+
+    .product-name {
+      font-family: 'Overlock', cursive;
+      color: maroon;
+      font-size: 1.2rem;
+    }
+
+    .modal{
+      background-color: rgba(0,0,0,0.4);
+    }
+
+    .modal-body{
+      display: grid;
+      place-items:center;
+    }
+
+    .modal-content {
+      background-color: transparent;
+      border: none;
+    }
+
+    .modal-header {
+      border: none;
+    }
+
+
+
+    #footer {
+      background: #e31e25 !important;
+      border-top: 1.5rem solid gainsboro;
+      display: grid;
+      place-items: center;
+      color: white;
+      padding: 2rem;
+    }
+  </style>
+  <meta charset="utf-8">
+  <title></title>
+</head>
+
+<body>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+  <!-- Navigation Bar -->
+
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="index.html"><img class="logo_home" src="Logo4.png" alt=""></a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+
+    <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+      <ul class="navbar-nav ml-auto mt-2 mt-lg-0">
+        <li class="nav-item">
+          <a class="nav-link py-0" href="about.html">About</a>
+        </li>
+
+        <div class="vertical-line">
+
+        </div>
+
+
+        <li class="nav-item">
+          <a class="nav-link py-0" href="contact.html">Contact</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+  <div class="container-fluid category-menu" id="menu">
+    <li><a href="apparel.html">Apparel</a></li>
+    <li><a href="customised.html">Customised Gifts</a></li>
+    <li><a href="mugs.html">Mugs & Flasks</a></li>
+    <li><a href="stationary.html">Stationary</a></li>
+    <li><a href="technical.html">Technical Gifts</a></li>
+    <li><a href="diffusers.html">Diffusers & Oils</a></li>
+    <li><a href="occasion.html">Gifts by Occasion</a></li>
+    <li><a href="miscellaneous.html">Miscellaneous</a></li>
+  </div>
+
+  <h1>Customised Gifts</h1>
+
+
+  <div id="myBtnContainer">
+    <button class="btn active" onclick="filterSelection('all')"> Show all</button>
+    <button class="btn" onclick="filterSelection('gold')"> Gold Desktop Items</button>
+    <button class="btn" onclick="filterSelection('crystal')"> Crystal Dekstop Items</button>
+    <button class="btn" onclick="filterSelection('umbrella')"> Umbrellas</button>
+    <button class="btn" onclick="filterSelection('leather')"> Leather Items</button>
+    <button class="btn" onclick="filterSelection('frames')"> Frames</button>
+  </div>
+
+
+
+
+  <div id="product-grid">
+    <div class="row">
+
+      <div class="col-md-4 gold">
+        <a data-toggle="modal" data-target="#gold1">
+        <div class="card product">
+          <img class="card-img-top product-img" src="desktop-gold1.jpg" alt="Card image cap">
+          <div class="card-body product-body">
+            <h5 class="card-title product-name">Royal Blue w/ White Tipping</h5>
+          </div>
+        </div>
+        </a>
+      </div>
+
+      <div class="col-md-4 crystal">
+        <a data-toggle="modal" data-target="#crystal1">
+        <div class="card product">
+          <img class="card-img-top product-img" src="desktop-crystal1.jpg" alt="Card image cap">
+          <div class="card-body product-body">
+            <h5 class="card-title product-name">Red w/ White Tipping</h5>
+          </div>
+        </div>
+        </a>
+      </div>
+
+      <div class="col-md-4 umbrella">
+        <a data-toggle="modal" data-target="#umbrella1">
+        <div class="card product">
+          <img class="card-img-top product-img" src="umbrella1.jpg" alt="Card image cap">
+          <div class="card-body product-body">
+            <h5 class="card-title product-name">White w/ Blue Tipping</h5>
+          </div>
+        </div>
+        </a>
+      </div>
+
+      <div class="col-md-4 leather">
+        <a data-toggle="modal" data-target="#leather1">
+        <div class="card product">
+          <img class="card-img-top product-img" src="leather1.jpg" alt="Card image cap">
+          <div class="card-body product-body">
+            <h5 class="card-title product-name">Red and White Combination</h5>
+          </div>
+        </div>
+        </a>
+      </div>
+
+      <div class="col-md-4 frames">
+        <a data-toggle="modal" data-target="#frame1">
+        <div class="card product">
+          <img class="card-img-top product-img" src="misc-custom1.jpg" alt="Card image cap">
+          <div class="card-body product-body">
+            <h5 class="card-title product-name">Black Dryfit</h5>
+          </div>
+        </div>
+        </a>
+      </div>
+
+
+
+
+    </div>
+  </div>
+
+  <!-- Modal -->
+<div class="modal fade" id="gold1" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+      <div class="modal-body">
+        <img src="desktop-goldX1.jpg" />
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="crystal1" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+      <div class="modal-body">
+        <img src="desktop-crystalX1.jpg" />
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="umbrella1" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+      <div class="modal-body">
+        <img src="umbrellaX1.jpg" />
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="leather1" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+      <div class="modal-body">
+        <img src="leatherX1.jpg" />
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="frame1" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+      <div class="modal-body">
+        <img src="misc-customX1.jpg" />
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="polo6" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+      <div class="modal-body">
+        <img src="poloX6.jpg" />
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="polo7" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+      <div class="modal-body">
+        <img src="poloX7.jpg" />
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="polo8" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+      <div class="modal-body">
+        <img src="poloX8.jpg" />
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="polo9" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+      <div class="modal-body">
+        <img src="poloX9.jpg" />
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="polo10" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+      <div class="modal-body">
+        <img src="poloX10.jpg" />
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="polo11" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+      <div class="modal-body">
+        <img src="poloX11.jpg" />
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="polo12" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+      <div class="modal-body">
+        <img src="poloX12.jpg" />
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="polo13" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+      <div class="modal-body">
+        <img src="poloX13.jpg" />
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="polo14" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+      <div class="modal-body">
+        <img src="poloX14.jpg" />
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="tshirt1" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+      <div class="modal-body">
+        <img src="tshirtX1.jpg" />
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="tshirt2" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+      <div class="modal-body">
+        <img src="tshirtX2.jpg" />
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="tshirt3" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+      <div class="modal-body">
+        <img src="tshirtX3.jpg" />
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="tshirt4" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+      <div class="modal-body">
+        <img src="tshirtX4.jpg" />
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="tshirt5" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+      <div class="modal-body">
+        <img src="tshirtX5.jpg" />
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="shirt1" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+      <div class="modal-body">
+        <img src="shirtX1.jpg" />
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="shirt2" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+      <div class="modal-body">
+        <img src="shirtX2.jpg" />
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="shirt3" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+      <div class="modal-body">
+        <img src="shirtX3.jpg" />
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="shirt4" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+      <div class="modal-body">
+        <img src="shirtX4.jpg" />
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="shirt5" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+      <div class="modal-body">
+        <img src="shirtX5.jpg" />
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="shirt6" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+      <div class="modal-body">
+        <img src="shirtX6.jpg" />
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="shirt7" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+      <div class="modal-body">
+        <img src="shirtX6.jpg" />
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="shirt8" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+      <div class="modal-body">
+        <img src="shirtX8.jpg" />
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="shirt9" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+      <div class="modal-body">
+        <img src="shirtX9.jpg" />
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="shirt10" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+      <div class="modal-body">
+        <img src="shirtX10.jpg" />
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="shirt11" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+      <div class="modal-body">
+        <img src="shirtX11.jpg" />
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="shirt12" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+      <div class="modal-body">
+        <img src="shirtX12.jpg" />
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="shirt13" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+      <div class="modal-body">
+        <img src="shirtX13.jpg" />
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="shirt14" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+      <div class="modal-body">
+        <img src="shirtX14.jpg" />
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="shirt15" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+      <div class="modal-body">
+        <img src="shirtX15.jpg" />
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="wind1" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+      <div class="modal-body">
+        <img src="windX1.jpg" />
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="wind2" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+      <div class="modal-body">
+        <img src="windX2.jpg" />
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="wind3" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+      <div class="modal-body">
+        <img src="windX3.jpg" />
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="wind4" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+      <div class="modal-body">
+        <img src="windX4.jpg" />
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="wind5" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+      <div class="modal-body">
+        <img src="windX5.jpg" />
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="sweatshirt1" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+      <div class="modal-body">
+        <img src="sweatshirtX1.jpg" />
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="sweatshirt2" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+      <div class="modal-body">
+        <img src="sweatshirtX2.jpg" />
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="sweatshirt3" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+      <div class="modal-body">
+        <img src="sweatshirtX3.jpg" />
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="cap1" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+      <div class="modal-body">
+        <img src="capX1.jpg" />
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="cap2" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+      <div class="modal-body">
+        <img src="capX2.jpg" />
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="cap3" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+      <div class="modal-body">
+        <img src="capX3.jpg" />
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="cap4" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+      <div class="modal-body">
+        <img src="capX4.jpg" />
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="cap5" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+      <div class="modal-body">
+        <img src="capX5.jpg" />
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="cap6" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+      <div class="modal-body">
+        <img src="capX6.jpg" />
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="cap7" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+      <div class="modal-body">
+        <img src="capX7.jpg" />
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="cap8" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+      <div class="modal-body">
+        <img src="capX8.jpg" />
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="cap9" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+      <div class="modal-body">
+        <img src="capX9.jpg" />
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="cap10" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+      <div class="modal-body">
+        <img src="capX10.jpg" />
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="apron" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+      <div class="modal-body">
+        <img src="apronX.jpg" />
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="blazer" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+      <div class="modal-body">
+        <img src="blazerX.jpg" />
+      </div>
+    </div>
+  </div>
+</div>
+
+
+  <section id="footer">
+
+    <div class="footer-text">
+      Copyright &copy 2021 IITB Research Park Foundation | All rights reserved
+
+    </div>
+  </section>
+
+  <script>
+    filterSelection("all")
+
+    function filterSelection(c) {
+      var x, i;
+      x = document.getElementsByClassName("col-md-4");
+      if (c == "all") c = "";
+      for (i = 0; i < x.length; i++) {
+        w3RemoveClass(x[i], "show");
+        if (x[i].className.indexOf(c) > -1) w3AddClass(x[i], "show");
+      }
+    }
+
+    function w3AddClass(element, name) {
+      var i, arr1, arr2;
+      arr1 = element.className.split(" ");
+      arr2 = name.split(" ");
+      for (i = 0; i < arr2.length; i++) {
+        if (arr1.indexOf(arr2[i]) == -1) {
+          element.className += " " + arr2[i];
+        }
+      }
+    }
+
+    function w3RemoveClass(element, name) {
+      var i, arr1, arr2;
+      arr1 = element.className.split(" ");
+      arr2 = name.split(" ");
+      for (i = 0; i < arr2.length; i++) {
+        while (arr1.indexOf(arr2[i]) > -1) {
+          arr1.splice(arr1.indexOf(arr2[i]), 1);
+        }
+      }
+      element.className = arr1.join(" ");
+    }
+
+
+    // Add active class to the current button (highlight it)
+    var btnContainer = document.getElementById("myBtnContainer");
+    var btns = btnContainer.getElementsByClassName("btn");
+    for (var i = 0; i < btns.length; i++) {
+      btns[i].addEventListener("click", function() {
+        var current = document.getElementsByClassName("active");
+        current[0].className = current[0].className.replace(" active", "");
+        this.className += " active";
+      });
+    }
+  </script>
+
+
+</body>
+
+</html>

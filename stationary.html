@@ -1,0 +1,1973 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Links -->
+
+  <!-- bootstrap links -->
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns" crossorigin="anonymous"></script>
+
+  <!-- Font Awesome links -->
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <script src="https://kit.fontawesome.com/6c2bd266c9.js" crossorigin="anonymous"></script>
+
+  <!-- Font Links -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:wght@500&display=swap" rel="stylesheet">
+
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300&display=swap" rel="stylesheet">
+
+  <link href="https://fonts.googleapis.com/css2?family=Italianno&display=swap" rel="stylesheet">
+
+  <link href="https://fonts.googleapis.com/css2?family=Prompt&display=swap" rel="stylesheet">
+
+  <link href="https://fonts.googleapis.com/css2?family=Zen+Antique+Soft&display=swap" rel="stylesheet">
+
+  <link href="https://fonts.googleapis.com/css2?family=Overlock:wght@700&display=swap" rel="stylesheet">
+
+  <link href="https://fonts.googleapis.com/css2?family=Cantata+One&display=swap" rel="stylesheet">
+
+
+
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      background-color: white;
+      overflow-x: hidden;
+    }
+
+    /* Navigation Bar */
+
+    .logo_home {
+      margin: 0;
+      padding: 0;
+      width: 11rem;
+      height: 4rem;
+    }
+
+    .navbar {
+      background: white !important;
+      height: 6rem;
+      font-family: 'Crimson Pro', serif;
+      font-size: 1.1rem;
+      border-top: 0.1rem solid #e31e25;
+    }
+
+    .nav-link {
+      text-decoration: none;
+      color: #e31e25 !important;
+    }
+
+    .nav-link:hover {
+      color: grey !important;
+    }
+
+    .vertical-line {
+      border-right: 0.1rem solid #e31e25;
+    }
+
+    .navbar-collapse {
+      text-align: right;
+    }
+
+
+
+    @media (max-width:768px) {
+      .navbar {
+        height: auto;
+      }
+
+      .logo_home {
+        margin: 0;
+        padding: 0;
+        width: 60%;
+        height: 60%;
+      }
+
+      .active {
+        border-right: none;
+      }
+
+      .nav-link {
+        font-size: 1.3rem;
+        margin: 1rem;
+      }
+
+    }
+
+    .category-menu {
+      text-align: center;
+      background-color: #e31e25;
+      padding: 0.7rem;
+      /* border-bottom: 1.5rem solid gainsboro; */
+    }
+
+
+    #menu li {
+      display: inline;
+      padding: 1.5rem;
+      font-size: 1.1rem;
+      color: white;
+      font-family: 'Crimson Pro', serif;
+    }
+
+    #menu li:hover {
+      cursor: pointer;
+      color: darkgrey;
+    }
+
+    #menu a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .col-md-4 {
+      display: none;
+    }
+
+    /* The "show" class is added to the filtered elements */
+    .show {
+      display: block;
+    }
+
+    #myBtnContainer {
+      position: relative;
+      text-align: center;
+    }
+
+    /* Style the buttons */
+    .btn {
+      border: 0.1rem solid gainsboro;
+      cursor: pointer;
+      margin: 1.5rem 0.5rem 2rem 0.5rem;
+      font-size: 0.95rem;
+      color: maroon;
+      font-family: 'Zen Antique Soft', serif;
+      box-shadow: 0.1rem 0.1rem 0.1rem 0.1rem gainsboro;
+    }
+
+    .btn:hover {
+      background-color: lightgrey;
+    }
+
+    .btn.active {
+      border: 0.1rem solid gainsboro;
+      color:#e31e25;
+    }
+
+    .show {
+      display: block;
+    }
+
+    h1{
+      text-align: center;
+      margin-top: 1.5rem;
+      margin-bottom: 1.5rem;
+      font-family: 'Cantata One', serif;
+      color:#848482;
+    }
+
+
+    #product-grid {
+      margin-top: 2rem;
+      width: 88%;
+      margin-left: 13vh;
+      margin-bottom: 3rem;
+    }
+
+    .product {
+      display: grid;
+      place-items: center;
+      text-align: center;
+      margin-bottom: 3rem;
+      border: 0.1rem solid gainsboro;
+      height: 20rem;
+      background: #FAF3F3;
+      box-shadow:0.2rem 0.2rem 0.2rem 0.2rem gainsboro;
+    }
+
+    .product:hover{
+      cursor:pointer;
+      box-shadow:0.5rem 0.5rem 0.5rem 0.5rem darkgrey;
+      background: gainsboro;
+    }
+
+    .product-img {
+      width: auto;
+      height: 12rem;
+      margin-top: 1rem;
+      box-shadow: 0.2rem 0.2rem 0.2rem 0.2rem #DECDC3;
+    }
+
+    .product-body {
+      display: grid;
+      place-items: center;
+      text-align: center;
+    }
+
+    .product-name {
+      font-family: 'Overlock', cursive;
+      color: maroon;
+      font-size: 1.2rem;
+    }
+
+    .modal{
+      background-color: rgba(0,0,0,0.4);
+    }
+
+    .modal-body{
+      display: grid;
+      place-items:center;
+    }
+
+    .modal-content {
+      background-color: transparent;
+      border: none;
+    }
+
+    .modal-header {
+      border: none;
+    }
+
+
+
+    #footer {
+      background: #e31e25 !important;
+      border-top: 1.5rem solid gainsboro;
+      display: grid;
+      place-items: center;
+      color: white;
+      padding: 2rem;
+    }
+  </style>
+  <meta charset="utf-8">
+  <title></title>
+</head>
+
+<body>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+  <!-- Navigation Bar -->
+
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="index.html"><img class="logo_home" src="Logo4.png" alt=""></a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+
+    <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+      <ul class="navbar-nav ml-auto mt-2 mt-lg-0">
+        <li class="nav-item">
+          <a class="nav-link py-0" href="about.html">About</a>
+        </li>
+
+        <div class="vertical-line">
+
+        </div>
+
+
+        <li class="nav-item">
+          <a class="nav-link py-0" href="contact.html">Contact</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+  <div class="container-fluid category-menu" id="menu">
+    <li><a href="apparel.html">Apparel</a></li>
+    <li><a href="customised.html">Customised Gifts</a></li>
+    <li><a href="mugs.html">Mugs & Flasks</a></li>
+    <li><a href="stationary.html">Stationary</a></li>
+    <li><a href="technical.html">Technical Gifts</a></li>
+    <li><a href="diffusers.html">Diffusers & Oils</a></li>
+    <li><a href="occasion.html">Gifts by Occasion</a></li>
+    <li><a href="miscellaneous.html">Miscellaneous</a></li>
+  </div>
+
+  <h1>Stationary</h1>
+
+
+  <div id="myBtnContainer">
+    <button class="btn active" onclick="filterSelection('all')"> Show all</button>
+    <button class="btn" onclick="filterSelection('diary')"> Diaries & Calendars</button>
+    <button class="btn" onclick="filterSelection('pen')"> Pens</button>
+    <button class="btn" onclick="filterSelection('sheaffer')"> Sheaffer Gift Sets</button>
+  </div>
+
+
+
+
+  <div id="product-grid">
+    <div class="row">
+
+      <div class="col-md-4 diary">
+        <a data-toggle="modal" data-target="#diary1">
+        <div class="card product">
+          <img class="card-img-top product-img" src="diary1.jpg" alt="Card image cap">
+          <div class="card-body product-body">
+            <h5 class="card-title product-name"></h5>
+          </div>
+        </div>
+        </a>
+      </div>
+
+      <div class="col-md-4 diary">
+        <a data-toggle="modal" data-target="#diary2">
+        <div class="card product">
+          <img class="card-img-top product-img" src="diary2.jpg" alt="Card image cap">
+          <div class="card-body product-body">
+            <h5 class="card-title product-name"></h5>
+          </div>
+        </div>
+        </a>
+      </div>
+
+      <div class="col-md-4 diary">
+        <a data-toggle="modal" data-target="#diary3">
+        <div class="card product">
+          <img class="card-img-top product-img" src="diary3.jpg" alt="Card image cap">
+          <div class="card-body product-body">
+            <h5 class="card-title product-name"></h5>
+          </div>
+        </div>
+        </a>
+      </div>
+
+      <div class="col-md-4 diary">
+        <a data-toggle="modal" data-target="#diary4">
+        <div class="card product">
+          <img class="card-img-top product-img" src="diary4.jpg" alt="Card image cap">
+          <div class="card-body product-body">
+            <h5 class="card-title product-name"></h5>
+          </div>
+        </div>
+        </a>
+      </div>
+
+      <div class="col-md-4 diary">
+        <a data-toggle="modal" data-target="#diary5">
+        <div class="card product">
+          <img class="card-img-top product-img" src="diary5.jpg" alt="Card image cap">
+          <div class="card-body product-body">
+            <h5 class="card-title product-name"></h5>
+          </div>
+        </div>
+        </a>
+      </div>
+
+      <div class="col-md-4 diary">
+        <a data-toggle="modal" data-target="#diary6">
+        <div class="card product">
+          <img class="card-img-top product-img" src="diary6.jpg" alt="Card image cap">
+          <div class="card-body product-body">
+            <h5 class="card-title product-name"></h5>
+          </div>
+        </div>
+        </a>
+      </div>
+
+      <div class="col-md-4 diary">
+        <a data-toggle="modal" data-target="#diary7">
+        <div class="card product">
+          <img class="card-img-top product-img" src="diary7.jpg" alt="Card image cap">
+          <div class="card-body product-body">
+            <h5 class="card-title product-name"></h5>
+          </div>
+        </div>
+        </a>
+      </div>
+
+      <div class="col-md-4 diary">
+        <a data-toggle="modal" data-target="#diary8">
+        <div class="card product">
+          <img class="card-img-top product-img" src="diary8.jpg" alt="Card image cap">
+          <div class="card-body product-body">
+            <h5 class="card-title product-name"></h5>
+          </div>
+        </div>
+        </a>
+      </div>
+
+      <div class="col-md-4 diary">
+        <a data-toggle="modal" data-target="#diary9">
+        <div class="card product">
+          <img class="card-img-top product-img" src="diary9.jpg" alt="Card image cap">
+          <div class="card-body product-body">
+            <h5 class="card-title product-name"></h5>
+          </div>
+        </div>
+        </a>
+      </div>
+
+      <div class="col-md-4 diary">
+        <a data-toggle="modal" data-target="#diary10">
+        <div class="card product">
+          <img class="card-img-top product-img" src="diary10.jpg" alt="Card image cap">
+          <div class="card-body product-body">
+            <h5 class="card-title product-name"></h5>
+          </div>
+        </div>
+        </a>
+      </div>
+
+      <div class="col-md-4 diary">
+        <a data-toggle="modal" data-target="#diary11">
+        <div class="card product">
+          <img class="card-img-top product-img" src="diary11.jpg" alt="Card image cap">
+          <div class="card-body product-body">
+            <h5 class="card-title product-name"></h5>
+          </div>
+        </div>
+        </a>
+      </div>
+
+      <div class="col-md-4 diary">
+        <a data-toggle="modal" data-target="#diary12">
+        <div class="card product">
+          <img class="card-img-top product-img" src="diary12.jpg" alt="Card image cap">
+          <div class="card-body product-body">
+            <h5 class="card-title product-name"></h5>
+          </div>
+        </div>
+        </a>
+      </div>
+
+      <div class="col-md-4 diary">
+        <a data-toggle="modal" data-target="#diary13">
+        <div class="card product">
+          <img class="card-img-top product-img" src="diary13.jpg" alt="Card image cap">
+          <div class="card-body product-body">
+            <h5 class="card-title product-name"></h5>
+          </div>
+        </div>
+        </a>
+      </div>
+
+      <div class="col-md-4 diary">
+        <a data-toggle="modal" data-target="#diary14">
+        <div class="card product">
+          <img class="card-img-top product-img" src="diary14.png" alt="Card image cap">
+          <div class="card-body product-body">
+            <h5 class="card-title product-name"></h5>
+          </div>
+        </div>
+        </a>
+      </div>
+
+      <div class="col-md-4 diary">
+        <a data-toggle="modal" data-target="#diary15">
+        <div class="card product">
+          <img class="card-img-top product-img" src="diary15.jpg" alt="Card image cap">
+          <div class="card-body product-body">
+            <h5 class="card-title product-name"></h5>
+          </div>
+        </div>
+        </a>
+      </div>
+
+      <div class="col-md-4 pen">
+        <a data-toggle="modal" data-target="#pen1">
+        <div class="card product">
+          <img class="card-img-top product-img" src="pen1.jpg" alt="Card image cap">
+          <div class="card-body product-body">
+            <h5 class="card-title product-name"></h5>
+          </div>
+        </div>
+        </a>
+      </div>
+
+      <div class="col-md-4 pen">
+        <a data-toggle="modal" data-target="#pen2">
+        <div class="card product">
+          <img class="card-img-top product-img" src="pen2.jpg" alt="Card image cap">
+          <div class="card-body product-body">
+            <h5 class="card-title product-name"></h5>
+          </div>
+        </div>
+        </a>
+      </div>
+
+      <div class="col-md-4 pen">
+        <a data-toggle="modal" data-target="#pen3">
+        <div class="card product">
+          <img class="card-img-top product-img" src="pen3.jpg" alt="Card image cap">
+          <div class="card-body product-body">
+            <h5 class="card-title product-name"></h5>
+          </div>
+        </div>
+        </a>
+      </div>
+
+      <div class="col-md-4 pen">
+        <a data-toggle="modal" data-target="#pen4">
+        <div class="card product">
+          <img class="card-img-top product-img" src="pen4.jpg" alt="Card image cap">
+          <div class="card-body product-body">
+            <h5 class="card-title product-name"></h5>
+          </div>
+        </div>
+        </a>
+      </div>
+
+      <div class="col-md-4 pen">
+        <a data-toggle="modal" data-target="#pen5">
+        <div class="card product">
+          <img class="card-img-top product-img" src="pen5.jpg" alt="Card image cap">
+          <div class="card-body product-body">
+            <h5 class="card-title product-name"></h5>
+          </div>
+        </div>
+        </a>
+      </div>
+
+      <div class="col-md-4 pen">
+        <a data-toggle="modal" data-target="#pen6">
+        <div class="card product">
+          <img class="card-img-top product-img" src="pen6.jpg" alt="Card image cap">
+          <div class="card-body product-body">
+            <h5 class="card-title product-name"></h5>
+          </div>
+        </div>
+        </a>
+      </div>
+
+      <div class="col-md-4 pen">
+        <a data-toggle="modal" data-target="#pen7">
+        <div class="card product">
+          <img class="card-img-top product-img" src="pen7.jpg" alt="Card image cap">
+          <div class="card-body product-body">
+            <h5 class="card-title product-name"></h5>
+          </div>
+        </div>
+        </a>
+      </div>
+
+      <div class="col-md-4 pen">
+        <a data-toggle="modal" data-target="#pen8">
+        <div class="card product">
+          <img class="card-img-top product-img" src="pen8.jpg" alt="Card image cap">
+          <div class="card-body product-body">
+            <h5 class="card-title product-name"></h5>
+          </div>
+        </div>
+        </a>
+      </div>
+
+      <div class="col-md-4 pen">
+        <a data-toggle="modal" data-target="#pen9">
+        <div class="card product">
+          <img class="card-img-top product-img" src="pen9.jpg" alt="Card image cap">
+          <div class="card-body product-body">
+            <h5 class="card-title product-name"></h5>
+          </div>
+        </div>
+        </a>
+      </div>
+
+      <div class="col-md-4 pen">
+        <a data-toggle="modal" data-target="#pen10">
+        <div class="card product">
+          <img class="card-img-top product-img" src="pen10.jpg" alt="Card image cap">
+          <div class="card-body product-body">
+            <h5 class="card-title product-name"></h5>
+          </div>
+        </div>
+        </a>
+      </div>
+
+      <div class="col-md-4 pen">
+        <a data-toggle="modal" data-target="#pen11">
+        <div class="card product">
+          <img class="card-img-top product-img" src="pen11.jpg" alt="Card image cap">
+          <div class="card-body product-body">
+            <h5 class="card-title product-name"></h5>
+          </div>
+        </div>
+        </a>
+      </div>
+
+      <div class="col-md-4 pen">
+        <a data-toggle="modal" data-target="#pen12">
+        <div class="card product">
+          <img class="card-img-top product-img" src="pen12.jpg" alt="Card image cap">
+          <div class="card-body product-body">
+            <h5 class="card-title product-name"></h5>
+          </div>
+        </div>
+        </a>
+      </div>
+
+      <div class="col-md-4 pen">
+        <a data-toggle="modal" data-target="#pen13">
+        <div class="card product">
+          <img class="card-img-top product-img" src="pen13.jpg" alt="Card image cap">
+          <div class="card-body product-body">
+            <h5 class="card-title product-name"></h5>
+          </div>
+        </div>
+        </a>
+      </div>
+
+      <div class="col-md-4 pen">
+        <a data-toggle="modal" data-target="#pen14">
+        <div class="card product">
+          <img class="card-img-top product-img" src="pen14.jpg" alt="Card image cap">
+          <div class="card-body product-body">
+            <h5 class="card-title product-name"></h5>
+          </div>
+        </div>
+        </a>
+      </div>
+
+      <div class="col-md-4 pen">
+        <a data-toggle="modal" data-target="#pen15">
+        <div class="card product">
+          <img class="card-img-top product-img" src="pen15.jpg" alt="Card image cap">
+          <div class="card-body product-body">
+            <h5 class="card-title product-name"></h5>
+          </div>
+        </div>
+        </a>
+      </div>
+
+      <div class="col-md-4 pen">
+        <a data-toggle="modal" data-target="#pen16">
+        <div class="card product">
+          <img class="card-img-top product-img" src="pen16.jpg" alt="Card image cap">
+          <div class="card-body product-body">
+            <h5 class="card-title product-name"></h5>
+          </div>
+        </div>
+        </a>
+      </div>
+
+      <div class="col-md-4 pen">
+        <a data-toggle="modal" data-target="#pen17">
+        <div class="card product">
+          <img class="card-img-top product-img" src="pen17.jpg" alt="Card image cap">
+          <div class="card-body product-body">
+            <h5 class="card-title product-name"></h5>
+          </div>
+        </div>
+        </a>
+      </div>
+
+      <div class="col-md-4 pen">
+        <a data-toggle="modal" data-target="#pen18">
+        <div class="card product">
+          <img class="card-img-top product-img" src="pen18.jpg" alt="Card image cap">
+          <div class="card-body product-body">
+            <h5 class="card-title product-name"></h5>
+          </div>
+        </div>
+        </a>
+      </div>
+
+      <div class="col-md-4 pen">
+        <a data-toggle="modal" data-target="#pen19">
+        <div class="card product">
+          <img class="card-img-top product-img" src="pen19.jpg" alt="Card image cap">
+          <div class="card-body product-body">
+            <h5 class="card-title product-name"></h5>
+          </div>
+        </div>
+        </a>
+      </div>
+
+      <div class="col-md-4 sheaffer">
+        <a data-toggle="modal" data-target="#sheaffer1">
+        <div class="card product">
+          <img class="card-img-top product-img" src="sheaffer1.jpg" alt="Card image cap">
+          <div class="card-body product-body">
+            <h5 class="card-title product-name"></h5>
+          </div>
+        </div>
+        </a>
+      </div>
+
+      <div class="col-md-4 sheaffer">
+        <a data-toggle="modal" data-target="#sheaffer2">
+        <div class="card product">
+          <img class="card-img-top product-img" src="sheaffer2.jpg" alt="Card image cap">
+          <div class="card-body product-body">
+            <h5 class="card-title product-name"></h5>
+          </div>
+        </div>
+        </a>
+      </div>
+
+      <div class="col-md-4 sheaffer">
+        <a data-toggle="modal" data-target="#sheaffer3">
+        <div class="card product">
+          <img class="card-img-top product-img" src="sheaffer3.jpg" alt="Card image cap">
+          <div class="card-body product-body">
+            <h5 class="card-title product-name"></h5>
+          </div>
+        </div>
+        </a>
+      </div>
+
+      <div class="col-md-4 sheaffer">
+        <a data-toggle="modal" data-target="#sheaffer4">
+        <div class="card product">
+          <img class="card-img-top product-img" src="sheaffer4.jpg" alt="Card image cap">
+          <div class="card-body product-body">
+            <h5 class="card-title product-name"></h5>
+          </div>
+        </div>
+        </a>
+      </div>
+
+      <div class="col-md-4 sheaffer">
+        <a data-toggle="modal" data-target="#sheaffer5">
+        <div class="card product">
+          <img class="card-img-top product-img" src="sheaffer5.jpg" alt="Card image cap">
+          <div class="card-body product-body">
+            <h5 class="card-title product-name"></h5>
+          </div>
+        </div>
+        </a>
+      </div>
+
+      <div class="col-md-4 sheaffer">
+        <a data-toggle="modal" data-target="#sheaffer6">
+        <div class="card product">
+          <img class="card-img-top product-img" src="sheaffer6.jpg" alt="Card image cap">
+          <div class="card-body product-body">
+            <h5 class="card-title product-name"></h5>
+          </div>
+        </div>
+        </a>
+      </div>
+
+      <div class="col-md-4 sheaffer">
+        <a data-toggle="modal" data-target="#sheaffer7">
+        <div class="card product">
+          <img class="card-img-top product-img" src="sheaffer7.jpg" alt="Card image cap">
+          <div class="card-body product-body">
+            <h5 class="card-title product-name"></h5>
+          </div>
+        </div>
+        </a>
+      </div>
+
+      <div class="col-md-4 sheaffer">
+        <a data-toggle="modal" data-target="#sheaffer8">
+        <div class="card product">
+          <img class="card-img-top product-img" src="sheaffer8.jpg" alt="Card image cap">
+          <div class="card-body product-body">
+            <h5 class="card-title product-name"></h5>
+          </div>
+        </div>
+        </a>
+      </div>
+
+      <div class="col-md-4 sheaffer">
+        <a data-toggle="modal" data-target="#sheaffer9">
+        <div class="card product">
+          <img class="card-img-top product-img" src="sheaffer9.jpg" alt="Card image cap">
+          <div class="card-body product-body">
+            <h5 class="card-title product-name"></h5>
+          </div>
+        </div>
+        </a>
+      </div>
+
+      <div class="col-md-4 sheaffer">
+        <a data-toggle="modal" data-target="#sheaffer10">
+        <div class="card product">
+          <img class="card-img-top product-img" src="sheaffer10.jpg" alt="Card image cap">
+          <div class="card-body product-body">
+            <h5 class="card-title product-name"></h5>
+          </div>
+        </div>
+        </a>
+      </div>
+
+      <div class="col-md-4 sheaffer">
+        <a data-toggle="modal" data-target="#sheaffer11">
+        <div class="card product">
+          <img class="card-img-top product-img" src="sheaffer11.jpg" alt="Card image cap">
+          <div class="card-body product-body">
+            <h5 class="card-title product-name"></h5>
+          </div>
+        </div>
+        </a>
+      </div>
+
+      <div class="col-md-4 sheaffer">
+        <a data-toggle="modal" data-target="#sheaffer12">
+        <div class="card product">
+          <img class="card-img-top product-img" src="sheaffer12.jpg" alt="Card image cap">
+          <div class="card-body product-body">
+            <h5 class="card-title product-name"></h5>
+          </div>
+        </div>
+        </a>
+      </div>
+
+      <div class="col-md-4 sheaffer">
+        <a data-toggle="modal" data-target="#sheaffer13">
+        <div class="card product">
+          <img class="card-img-top product-img" src="sheaffer13.jpg" alt="Card image cap">
+          <div class="card-body product-body">
+            <h5 class="card-title product-name"></h5>
+          </div>
+        </div>
+        </a>
+      </div>
+
+      <div class="col-md-4 sheaffer">
+        <a data-toggle="modal" data-target="#sheaffer14">
+        <div class="card product">
+          <img class="card-img-top product-img" src="sheaffer14.jpg" alt="Card image cap">
+          <div class="card-body product-body">
+            <h5 class="card-title product-name"></h5>
+          </div>
+        </div>
+        </a>
+      </div>
+
+      <div class="col-md-4 sheaffer">
+        <a data-toggle="modal" data-target="#sheaffer15">
+        <div class="card product">
+          <img class="card-img-top product-img" src="sheaffer15.jpg" alt="Card image cap">
+          <div class="card-body product-body">
+            <h5 class="card-title product-name"></h5>
+          </div>
+        </div>
+        </a>
+      </div>
+
+      <div class="col-md-4 sheaffer">
+        <a data-toggle="modal" data-target="#sheaffer16">
+        <div class="card product">
+          <img class="card-img-top product-img" src="sheaffer16.jpg" alt="Card image cap">
+          <div class="card-body product-body">
+            <h5 class="card-title product-name"></h5>
+          </div>
+        </div>
+        </a>
+      </div>
+
+      <div class="col-md-4 sheaffer">
+        <a data-toggle="modal" data-target="#sheaffer17">
+        <div class="card product">
+          <img class="card-img-top product-img" src="sheaffer17.jpg" alt="Card image cap">
+          <div class="card-body product-body">
+            <h5 class="card-title product-name"></h5>
+          </div>
+        </div>
+        </a>
+      </div>
+
+      <div class="col-md-4 sheaffer">
+        <a data-toggle="modal" data-target="#sheaffer18">
+        <div class="card product">
+          <img class="card-img-top product-img" src="sheaffer18.jpg" alt="Card image cap">
+          <div class="card-body product-body">
+            <h5 class="card-title product-name"></h5>
+          </div>
+        </div>
+        </a>
+      </div>
+
+      <div class="col-md-4 sheaffer">
+        <a data-toggle="modal" data-target="#sheaffer19">
+        <div class="card product">
+          <img class="card-img-top product-img" src="sheaffer19.jpg" alt="Card image cap">
+          <div class="card-body product-body">
+            <h5 class="card-title product-name"></h5>
+          </div>
+        </div>
+        </a>
+      </div>
+
+      <div class="col-md-4 sheaffer">
+        <a data-toggle="modal" data-target="#sheaffer20">
+        <div class="card product">
+          <img class="card-img-top product-img" src="sheaffer20.jpg" alt="Card image cap">
+          <div class="card-body product-body">
+            <h5 class="card-title product-name"></h5>
+          </div>
+        </div>
+        </a>
+      </div>
+
+      <div class="col-md-4 sheaffer">
+        <a data-toggle="modal" data-target="#sheaffer21">
+        <div class="card product">
+          <img class="card-img-top product-img" src="sheaffer21.jpg" alt="Card image cap">
+          <div class="card-body product-body">
+            <h5 class="card-title product-name"></h5>
+          </div>
+        </div>
+        </a>
+      </div>
+
+      <div class="col-md-4 sheaffer">
+        <a data-toggle="modal" data-target="#sheaffer22">
+        <div class="card product">
+          <img class="card-img-top product-img" src="sheaffer22.jpg" alt="Card image cap">
+          <div class="card-body product-body">
+            <h5 class="card-title product-name"></h5>
+          </div>
+        </div>
+        </a>
+      </div>
+
+      <div class="col-md-4 sheaffer">
+        <a data-toggle="modal" data-target="#sheaffer23">
+        <div class="card product">
+          <img class="card-img-top product-img" src="sheaffer23.jpg" alt="Card image cap">
+          <div class="card-body product-body">
+            <h5 class="card-title product-name"></h5>
+          </div>
+        </div>
+        </a>
+      </div>
+
+      <div class="col-md-4 sheaffer">
+        <a data-toggle="modal" data-target="#sheaffer24">
+        <div class="card product">
+          <img class="card-img-top product-img" src="sheaffer24.jpg" alt="Card image cap">
+          <div class="card-body product-body">
+            <h5 class="card-title product-name"></h5>
+          </div>
+        </div>
+        </a>
+      </div>
+
+      <div class="col-md-4 sheaffer">
+        <a data-toggle="modal" data-target="#sheaffer25">
+        <div class="card product">
+          <img class="card-img-top product-img" src="sheaffer25.jpg" alt="Card image cap">
+          <div class="card-body product-body">
+            <h5 class="card-title product-name"></h5>
+          </div>
+        </div>
+        </a>
+      </div>
+
+      <div class="col-md-4 sheaffer">
+        <a data-toggle="modal" data-target="#sheaffer26">
+        <div class="card product">
+          <img class="card-img-top product-img" src="sheaffer26.jpg" alt="Card image cap">
+          <div class="card-body product-body">
+            <h5 class="card-title product-name"></h5>
+          </div>
+        </div>
+        </a>
+      </div>
+
+      <div class="col-md-4 sheaffer">
+        <a data-toggle="modal" data-target="#sheaffer27">
+        <div class="card product">
+          <img class="card-img-top product-img" src="sheaffer27.jpg" alt="Card image cap">
+          <div class="card-body product-body">
+            <h5 class="card-title product-name"></h5>
+          </div>
+        </div>
+        </a>
+      </div>
+
+
+
+
+
+    </div>
+  </div>
+
+  <!-- Modal -->
+<div class="modal fade" id="diary1" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+      <div class="modal-body" style="left:-10rem;">
+        <img src="diary1.jpg" />
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="diary2" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+      <div class="modal-body" style="left:-10rem;">
+        <img src="diary2.jpg" />
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="diary3" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+      <div class="modal-body" style="left:-10rem;">
+        <img src="diary3.jpg" />
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="diary4" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+      <div class="modal-body" style="left:-10rem;">
+        <img src="diary4.jpg" />
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="diary5" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+      <div class="modal-body" style="left:-10rem;">
+        <img src="diary5.jpg" />
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="diary6" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+      <div class="modal-body" style="left:-10rem;">
+        <img src="diary6.jpg" />
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="diary7" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+      <div class="modal-body" style="left:-10rem;">
+        <img src="diary7.jpg" />
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="diary8" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+      <div class="modal-body" style="left:-10rem;">
+        <img src="diary8.jpg" />
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="diary9" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+      <div class="modal-body" style="left:-10rem;">
+        <img src="diary9.jpg" />
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="diary10" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+      <div class="modal-body" style="left:-10rem;">
+        <img src="diary10.jpg" />
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="diary11" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+      <div class="modal-body" style="left:-10rem;">
+        <img src="diary11.jpg" />
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="diary12" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+      <div class="modal-body" style="left:-10rem;">
+        <img src="diary12.jpg" />
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="diary13" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+      <div class="modal-body" style="left:-10rem;">
+        <img src="diary13.jpg" />
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="diary14" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+      <div class="modal-body" style="left:-10rem;">
+        <img src="diary14.png" />
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="diary15" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+      <div class="modal-body" style="left:-10rem;">
+        <img src="diary15.jpg" />
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="pen1" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+      <div class="modal-body">
+        <img src="penX1.jpg" />
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="pen2" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+      <div class="modal-body">
+        <img src="penX2.jpg" />
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="pen3" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+      <div class="modal-body">
+        <img src="penX3.jpg" />
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="pen4" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+      <div class="modal-body">
+        <img src="penX4.jpg" />
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="pen5" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+      <div class="modal-body">
+        <img src="penX5.jpg" />
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="pen6" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+      <div class="modal-body">
+        <img src="penX6.jpg" />
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="pen7" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+      <div class="modal-body">
+        <img src="penX7.jpg" />
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="pen8" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+      <div class="modal-body">
+        <img src="penX8.jpg" />
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="pen9" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+      <div class="modal-body">
+        <img src="penX9.jpg" />
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="pen1 0" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+      <div class="modal-body">
+        <img src="penX10.jpg" />
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="pen11" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+      <div class="modal-body">
+        <img src="penX11.jpg" />
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="pen12" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+      <div class="modal-body">
+        <img src="penX12.jpg" />
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="pen13" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+      <div class="modal-body">
+        <img src="penX13.jpg" />
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="pen14" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+      <div class="modal-body">
+        <img src="penX14.jpg" />
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="pen15" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+      <div class="modal-body">
+        <img src="penX15.jpg" />
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="pen16" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+      <div class="modal-body">
+        <img src="penX16.jpg" />
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="pen17" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+      <div class="modal-body">
+        <img src="penX17.jpg" />
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="pen18" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+      <div class="modal-body">
+        <img src="penX18.jpg" />
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="pen19" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+      <div class="modal-body">
+        <img src="penX19.jpg" />
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="sheaffer1" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+      <div class="modal-body">
+        <img src="sheafferX1.jpg" />
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="sheaffer2" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+      <div class="modal-body">
+        <img src="sheafferX2.jpg" />
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="sheaffer3" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+      <div class="modal-body">
+        <img src="sheafferX3.jpg" />
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="sheaffer4" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+      <div class="modal-body">
+        <img src="sheafferX4.jpg" />
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="sheaffer5" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+      <div class="modal-body">
+        <img src="sheafferX5.jpg" />
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="sheaffer6" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+      <div class="modal-body">
+        <img src="sheafferX6.jpg" />
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="sheaffer7" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+      <div class="modal-body">
+        <img src="sheafferX7.jpg" />
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="sheaffer8" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+      <div class="modal-body">
+        <img src="sheafferX8.jpg" />
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="sheaffer9" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+      <div class="modal-body">
+        <img src="sheafferX9.jpg" />
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="sheaffer10" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+      <div class="modal-body">
+        <img src="sheafferX10.jpg" />
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="sheaffer11" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+      <div class="modal-body">
+        <img src="sheafferX11.jpg" />
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="sheaffer12" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+      <div class="modal-body">
+        <img src="sheafferX12.jpg" />
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="sheaffer13" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+      <div class="modal-body">
+        <img src="sheafferX13.jpg" />
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="sheaffer14" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+      <div class="modal-body">
+        <img src="sheafferX14.jpg" />
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="sheaffer15" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+      <div class="modal-body">
+        <img src="sheafferX15.jpg" />
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="sheaffer16" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+      <div class="modal-body">
+        <img src="sheafferX16.jpg" />
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="sheaffer17" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+      <div class="modal-body">
+        <img src="sheafferX17.jpg" />
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="sheaffer18" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+      <div class="modal-body">
+        <img src="sheafferX18.jpg" />
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="sheaffer19" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+      <div class="modal-body">
+        <img src="sheafferX19.jpg" />
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="sheaffer20" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+      <div class="modal-body">
+        <img src="sheafferX20.jpg" />
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="sheaffer21" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+      <div class="modal-body">
+        <img src="sheafferX21.jpg" />
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="sheaffer22" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+      <div class="modal-body">
+        <img src="sheafferX22.jpg" />
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="sheaffer23" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+      <div class="modal-body">
+        <img src="sheafferX23.jpg" />
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="sheaffer24" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+      <div class="modal-body">
+        <img src="sheafferX24.jpg" />
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="sheaffer25" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+      <div class="modal-body">
+        <img src="sheafferX25.jpg" />
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="sheaffer26" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+      <div class="modal-body">
+        <img src="sheafferX26.jpg" />
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="sheaffer27" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+      <div class="modal-body">
+        <img src="sheafferX27.jpg" />
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+  <section id="footer">
+
+    <div class="footer-text">
+      Copyright &copy 2021 IITB Research Park Foundation | All rights reserved
+
+    </div>
+  </section>
+
+  <script>
+    filterSelection("all")
+
+    function filterSelection(c) {
+      var x, i;
+      x = document.getElementsByClassName("col-md-4");
+      if (c == "all") c = "";
+      for (i = 0; i < x.length; i++) {
+        w3RemoveClass(x[i], "show");
+        if (x[i].className.indexOf(c) > -1) w3AddClass(x[i], "show");
+      }
+    }
+
+    function w3AddClass(element, name) {
+      var i, arr1, arr2;
+      arr1 = element.className.split(" ");
+      arr2 = name.split(" ");
+      for (i = 0; i < arr2.length; i++) {
+        if (arr1.indexOf(arr2[i]) == -1) {
+          element.className += " " + arr2[i];
+        }
+      }
+    }
+
+    function w3RemoveClass(element, name) {
+      var i, arr1, arr2;
+      arr1 = element.className.split(" ");
+      arr2 = name.split(" ");
+      for (i = 0; i < arr2.length; i++) {
+        while (arr1.indexOf(arr2[i]) > -1) {
+          arr1.splice(arr1.indexOf(arr2[i]), 1);
+        }
+      }
+      element.className = arr1.join(" ");
+    }
+
+
+    // Add active class to the current button (highlight it)
+    var btnContainer = document.getElementById("myBtnContainer");
+    var btns = btnContainer.getElementsByClassName("btn");
+    for (var i = 0; i < btns.length; i++) {
+      btns[i].addEventListener("click", function() {
+        var current = document.getElementsByClassName("active");
+        current[0].className = current[0].className.replace(" active", "");
+        this.className += " active";
+      });
+    }
+  </script>
+
+
+</body>
+
+</html>
